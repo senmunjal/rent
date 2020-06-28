@@ -1,3 +1,4 @@
+
 @extends('layout')
 
 @section('content')
@@ -192,12 +193,12 @@
                             <!-- /.card-header -->
                             <div class="card-body p-0">
                                 <ul class="users-list clearfix">
-                                    @foreach($user as $user)
+                                    @foreach($userDetail as $userDetails)
 
                                     <li>
-                                        <img src="{{$user->user_profile_pic}}" height="128px" width="128px" alt="User Image">
-                                        <a class="users-list-name" href="#">{{$user->user_name}}</a>
-                                        <span class="users-list-date">{{$user->created_at}}</span>
+                                        <img src="{{$userDetails->user_profile_pic}}" height="128px" width="128px" alt="User Image">
+                                        <a class="users-list-name" href="#">{{$userDetails->user_name}}</a>
+                                        <span class="users-list-date">{{$userDetails->created_at}}</span>
                                     </li>
                                     <!-- <li>
                                         <img src="dist/img/user8-128x128.jpg" alt="User Image">
@@ -271,22 +272,27 @@
                                 <table class="table m-0">
                                     <thead>
                                         <tr>
-                                            <th>Order ID</th>
-                                            <th>Item</th>
-                                            <th>Status</th>
-                                            <th>Popularity</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Location</th>
+                                            <th>Shop Rented</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($userDetail as $userDetails)
+                                            
+                                        
                                         <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Call of Duty IV</td>
-                                            <td><span class="badge badge-success">Shipped</span></td>
+                                            <td>{{$userDetails->user_name}}</td>
+                                            <td>{{$userDetails->user_email}}</td>
+                                            <td><span class="badge badge-success">{{$userDetails->user_location}}</span></td>
                                             <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                                <div class="sparkbar" data-color="#00a65a" data-height="20">{{$userDetails->user_rented_shop}}</div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        @endforeach
+                                        
+                                        <!-- <tr>
                                             <td><a href="pages/examples/invoice.html">OR1848</a></td>
                                             <td>Samsung Smart TV</td>
                                             <td><span class="badge badge-warning">Pending</span></td>
@@ -333,7 +339,7 @@
                                             <td>
                                                 <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -500,3 +506,4 @@
     <!-- /.content -->
 </div>
 @endsection
+

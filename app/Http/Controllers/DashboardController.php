@@ -9,6 +9,7 @@ use App\Dashboard;
 use App\Owner;
 use App\Shoprent;
 use Illuminate\Http\Request;
+use SebastianBergmann\Environment\Console;
 
 class DashboardController extends Controller
 {
@@ -18,19 +19,17 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   $userDetail = User::latest()->limit(8)->get();
         $userCount = User::count();
         $shopCount = Shop::count();
         $shopAllocated = Shop::where('shop_allocated', '=', '1')->count();
         $totalRent = Shop::where('shop_allocated', '=', '1')->sum('shop_rent');
-        $user = User::take(8)->latest()->get();
-
         $ownerCount = Owner::count();
         $ownerRegisteredToday = Owner::whereDate('created_at', Carbon::today())->count();
         $userRegisteredToday = User::whereDate('created_at', Carbon::today())->count();
         $shopRegisteredToday = Shop::whereDate('created_at', Carbon::today())->count();
 
-        return view('dashboard', compact('userCount', 'shopCount', 'shopAllocated', 'totalRent', 'user', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
+        return view('dashboard', compact('userDetail','userCount', 'shopCount', 'shopAllocated', 'totalRent', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
     }
 
     /**
