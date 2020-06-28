@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'DashboardController@index');
+
+
 Route::get('/test', function () {
     return view('layout');
 });
@@ -37,5 +39,3 @@ Route::get('/test5', function () {
 Route::get('/test2', function () {
     return view('contact');
 });
-
-

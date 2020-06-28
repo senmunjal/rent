@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Carbon\Carbon;
 use App\User;
 use App\Shop;
 use App\Dashboard;
+use App\Owner;
 use App\Shoprent;
 use Illuminate\Http\Request;
 
@@ -16,12 +19,18 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $userCount=User::count();
-        $shopCount=Shop::count();
-        $shopAllocated=Shop::where('shop_allocated', '=' , '1')->count();
-        $totalRent = Shop::where('shop_allocated', '=' , '1')->sum('shop_rent');
-        $user=User::take(8)->latest()->get();
-        return view('dashboard',compact('userCount','shopCount','shopAllocated','totalRent','user'));
+        $userCount = User::count();
+        $shopCount = Shop::count();
+        $shopAllocated = Shop::where('shop_allocated', '=', '1')->count();
+        $totalRent = Shop::where('shop_allocated', '=', '1')->sum('shop_rent');
+        $user = User::take(8)->latest()->get();
+
+        $ownerCount = Owner::count();
+        $ownerRegisteredToday = Owner::whereDate('created_at', Carbon::today())->count();
+        $userRegisteredToday = User::whereDate('created_at', Carbon::today())->count();
+        $shopRegisteredToday = Shop::whereDate('created_at', Carbon::today())->count();
+
+        return view('dashboard', compact('userCount', 'shopCount', 'shopAllocated', 'totalRent', 'user', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
     }
 
     /**
