@@ -19,7 +19,8 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $userDetail = User::latest()->limit(8)->get();
+    {
+        $userDetail = User::latest()->limit(8)->get();
         $userCount = User::count();
         $shopCount = Shop::count();
         $shopAllocated = Shop::where('shop_allocated', '=', '1')->count();
@@ -29,7 +30,7 @@ class DashboardController extends Controller
         $userRegisteredToday = User::whereDate('created_at', Carbon::today())->count();
         $shopRegisteredToday = Shop::whereDate('created_at', Carbon::today())->count();
 
-        return view('dashboard', compact('userDetail','userCount', 'shopCount', 'shopAllocated', 'totalRent', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
+        return view('dashboard', compact('userDetail', 'userCount', 'shopCount', 'shopAllocated', 'totalRent', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
     }
 
     /**

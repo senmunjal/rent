@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'DashboardController@index');
-
+Route::get('/detail', 'DetailController@index');
 
 Route::get('/test', function () {
     return view('layout');
