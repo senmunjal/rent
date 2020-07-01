@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Owner;
 use App\Shop;
-use App\Shoprent;
 use Illuminate\Http\Request;
 
-class DetailController extends Controller
+class ViewshopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +14,10 @@ class DetailController extends Controller
      */
     public function index()
     {
-        $user = User::limit(10)->get();
-        $owner = Owner::limit(20)->get();
-        $shop = Shop::limit(15)->get();
-        $shoprent = Shoprent::limit(20)->get();
-
-        return view('detail', compact('user', 'owner', 'shop', 'shoprent'));
+        $shop = Shop::limit(115)->get();
+        return view('viewshop', compact('shop'));
     }
+
 
     /**
      * Show the form for creating a new resource.

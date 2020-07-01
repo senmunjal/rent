@@ -166,109 +166,119 @@
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="dist/img/user2-160x160.jpeg" class="img-circle elevation-2" alt="User Image">
+                <a <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="dist/img/user2-160x160.jpeg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <a href="/test1" class="d-block">User</a>
+                        </div>
                     </div>
-                    <div class="info">
-                        <a href="/test1" class="d-block">User</a>
-                    </div>
-                </div>
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
+                            <li class="nav-item has-treeview menu-open">
 
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link active">
-                                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                                        <p>Da</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Wi
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>
-                                    Layout Options
-                                    <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
-                                </p>
-                            </a>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation + Sidebar</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <!-- <i class="nav-icon fas fa-copy"></i> -->
-                                <p>
-                                    view
-                                    <i class="fas fa-angle-left right"></i>
-                                    <!-- <span class="badge badge-info right"></span> -->
-                                </p>
-                            </a>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
-                                        <!-- <i class="far fa-circle nav-icon"></i> -->
-                                        <p>View Owner</p>
-                                        <a href="viewowner" class=""> </a> </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <!-- <i class="far fa-circle nav-icon"></i> -->
-                                        <p>View User</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <!-- <i class="far fa-circle nav-icon"></i> -->
-                                        <p>View Shop</p>
-                                    </a>
-                                </li>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="./index.html" class="nav-link active">
+                                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                                            <p>Da</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
 
-                            </ul>
+                            <li class="nav-item">
+                                <a href="pages/widgets.html" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Wi
+                                        <span class="right badge badge-danger">New</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-copy"></i>
+                                    <p>
+                                        Layout Options
+                                        <i class="fas fa-angle-left right"></i>
+                                        <span class="badge badge-info right">6</span>
+                                    </p>
+                                </a>
+
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="pages/layout/top-nav.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Top Navigation</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Top Navigation + Sidebar</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <!-- <i class="nav-icon fas fa-copy"></i> -->
+                                    <p>
+                                        view
+                                        <i class="fas fa-angle-left right"></i>
+                                        <!-- <span class="badge badge-info right"></span> -->
+                                    </p>
+                                </a>
+
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="pages/layout/top-nav.html" class="nav-link">
+                                            <!-- <i class="far fa-circle nav-icon"></i> -->
+                                            <!-- <a class="btn btn-primary mt-2" href="/viewowner">viewowner</a> -->
+                                            <div class="info">
+                                                <a class="btn mt-2" href="/viewowner" class="d-block">View Owner</a>
+                                            </div>
+
+                                            <a href="viewowner" class=""> </a> </li>
+                                    <li class="nav-item">
+                                        <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                            <!-- <i class="far fa-circle nav-icon"></i> -->
+                                            <div class="info">
+                                                <a class="btn mt-2" href="/viewuser" class="d-block">View User</a>
+                                            </div>
+
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                            <!-- <i class="far fa-circle nav-icon"></i> -->
+                                            <div class="info">
+                                                <a class="btn mt-2" href="/viewshop" class="d-block">View Shop</a>
+                                            </div>
+
+                                        </a>
+                                    </li>
 
 
-                    </ul>
+                                </ul>
 
 
-                </nav>
+                        </ul>
+
+
+                    </nav>
 
 
 
-                <!-- /.sidebar-menu -->
+                    <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>

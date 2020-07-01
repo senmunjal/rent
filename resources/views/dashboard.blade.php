@@ -1,4 +1,3 @@
-
 @extends('layout')
 
 @section('content')
@@ -280,8 +279,8 @@
                                     </thead>
                                     <tbody>
                                         @foreach($userDetail as $userDetails)
-                                            
-                                        
+
+
                                         <tr>
                                             <td>{{$userDetails->user_name}}</td>
                                             <td>{{$userDetails->user_email}}</td>
@@ -291,7 +290,7 @@
                                             </td>
                                         </tr>
                                         @endforeach
-                                        
+
                                         <!-- <tr>
                                             <td><a href="pages/examples/invoice.html">OR1848</a></td>
                                             <td>Samsung Smart TV</td>
@@ -506,4 +505,3 @@
     <!-- /.content -->
 </div>
 @endsection
-

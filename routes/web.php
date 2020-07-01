@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index');
 Route::get('/detail', 'DetailController@index');
+Route::get('/viewowner', 'viewownerController@index');
+Route::get('/viewuser', 'viewuserController@index');
+Route::get('/viewshop', 'viewshopController@index');
+
+
+
+
 
 Route::get('/test', function () {
     return view('layout');
@@ -36,6 +43,6 @@ Route::get('/test5', function () {
     return view('calender');
 });
 
-Route::get('/test2', function () {
-    return view('contact');
+Route::get('/test1', function () {
+    return view('welcome');
 });

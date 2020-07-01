@@ -89,6 +89,35 @@
             <!-- /.table-responsive -->
         </div>
     </div>
+    <div class="row">
+        <h1 class="ml-3">Shop Rent Table</h1>
+        <div class="col-lg-12 ml-4">
+            <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                        <tr>
+                            <th>Shoprent Id</th>
+                            <th>shop Id</th>
+                            <th>user Id</th>
+                            <th>shop Rented at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach($shoprent as $shoprents)
+                        <tr>
+                            <td>{{$shoprents->shoprent_id}}</td>
+                            <td>{{$shoprents->shop_id}}</td>
+                            <td>{{$shoprents->user_id}}</td>
+                            <td>{{$shoprents->shop_rented_at}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+    </div>
 </div>
 
 

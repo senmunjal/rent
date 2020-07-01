@@ -30,6 +30,11 @@ class DashboardController extends Controller
         $userRegisteredToday = User::whereDate('created_at', Carbon::today())->count();
         $shopRegisteredToday = Shop::whereDate('created_at', Carbon::today())->count();
 
+
+
+
+
+
         return view('dashboard', compact('userDetail', 'userCount', 'shopCount', 'shopAllocated', 'totalRent', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
     }
 
