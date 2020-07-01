@@ -16,8 +16,9 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request,$id)
     {
+        $owner_id=$id;
         $userDetail = User::latest()->limit(8)->get();
         $userCount = User::count();
         $shopCount = Shop::count();

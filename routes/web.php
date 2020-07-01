@@ -16,16 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'SuperAdmin\DashboardController@index');
 
-Route::get('/admin','Admin\DashboardController@index');
+Route::get('/admin/{id}','Admin\DashboardController@index');
 
 Route::get('/test', function () {
     return view('layout');
 });
 
-
 Route::get('/test2', function () {
     return view('contact');
 });
+
 Route::get('/test3', function () {
     return view('profile');
 });
