@@ -228,49 +228,38 @@
                                     </li>
 
                                 </ul>
+                            </li>
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
-                                    <!-- <i class="nav-icon fas fa-copy"></i> -->
                                     <p>
-                                        view
+                                        View
                                         <i class="fas fa-angle-left right"></i>
-                                        <!-- <span class="badge badge-info right"></span> -->
+                                        <span class="badge badge-info right"></span>
                                     </p>
                                 </a>
 
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/layout/top-nav.html" class="nav-link">
-                                            <!-- <i class="far fa-circle nav-icon"></i> -->
-                                            <!-- <a class="btn btn-primary mt-2" href="/viewowner">viewowner</a> -->
-                                            <div class="info">
-                                                <a class="btn mt-2" href="/viewowner" class="d-block">View Owner</a>
-                                            </div>
+                                        <a href="/viewowner" class="nav-link">
 
-                                            <a href="viewowner" class=""> </a> </li>
-                                    <li class="nav-item">
-                                        <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                            <!-- <i class="far fa-circle nav-icon"></i> -->
-                                            <div class="info">
-                                                <a class="btn mt-2" href="/viewuser" class="d-block">View User</a>
-                                            </div>
-
+                                            <p>Owners</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                            <!-- <i class="far fa-circle nav-icon"></i> -->
-                                            <div class="info">
-                                                <a class="btn mt-2" href="/viewshop" class="d-block">View Shop</a>
-                                            </div>
+                                        <a href="/viewuser" class="nav-link">
 
+                                            <p>Users</p>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="/viewshop" class="nav-link">
 
+                                            <p>Shops</p>
+                                        </a>
+                                    </li>
 
                                 </ul>
-
-
+                            </li>
                         </ul>
 
 
