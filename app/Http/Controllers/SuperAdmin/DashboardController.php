@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\SuperAdmin;
 use Carbon\Carbon;
 use App\User;
 use App\Shop;
 use App\Dashboard;
 use App\Owner;
-use App\Shoprent;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use SebastianBergmann\Environment\Console;
 
 class DashboardController extends Controller
 {
@@ -19,7 +17,8 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $userDetail = User::latest()->limit(8)->get();
+    {
+        $userDetail = User::latest()->limit(8)->get();
         $userCount = User::count();
         $shopCount = Shop::count();
         $shopAllocated = Shop::where('shop_allocated', '=', '1')->count();
@@ -56,10 +55,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dashboard  $dashboard
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Dashboard $dashboard)
+    public function show($id)
     {
         //
     }
@@ -67,10 +66,10 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dashboard  $dashboard
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dashboard $dashboard)
+    public function edit($id)
     {
         //
     }
@@ -79,10 +78,10 @@ class DashboardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dashboard  $dashboard
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dashboard $dashboard)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -90,10 +89,10 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dashboard  $dashboard
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dashboard $dashboard)
+    public function destroy($id)
     {
         //
     }

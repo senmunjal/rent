@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OwnerDashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', 'SuperAdmin\DashboardController@index');
 
+Route::get('/admin','Admin\DashboardController@index');
 
 Route::get('/test', function () {
     return view('layout');
