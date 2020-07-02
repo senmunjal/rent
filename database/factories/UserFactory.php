@@ -22,7 +22,7 @@ $factory->define(User::class, function (Faker $faker) {
         'user_name' => $faker->name,
         'user_email' => $faker->unique()->safeEmail,
         'user_email_verified_at' => now(),
-        'user_password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'user_password' => bcrypt('test'), // password
         'remember_token' => Str::random(10),
         'user_location'=>'Haldwani',
         'user_status'=>'1',

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Shoprent extends Model
+class Shoprequest extends Model
 {
     public function owner()
     {

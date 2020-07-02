@@ -22,7 +22,7 @@ class CreateShopsTable extends Migration
             $table->string('shop_dimension')->nullable();
             $table->string('shop_rent');
             $table->string('shop_location');
-            $table->string('shop_security');
+            $table->string('shop_security');      
             $table->timestamps();
         });
     }

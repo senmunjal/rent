@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'SuperAdmin\DashboardController@index');
 
+Route::get('/users','SuperAdmin\DashboardController@viewUsers');
+
+Route::get('/owners','SuperAdmin\DashboardController@viewOwners');
+
+
 Route::get('/admin/{id}','Admin\DashboardController@index');
 
 Route::get('/test', function () {

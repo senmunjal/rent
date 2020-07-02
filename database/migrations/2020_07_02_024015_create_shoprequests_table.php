@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShoprentsTable extends Migration
+class CreateShoprequestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateShoprentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shoprents', function (Blueprint $table) {
-            $table->bigIncrements('shoprent_id');
-            $table->date('shop_rented_at');
-            $table->date('shop_rented_till')->nullable();
+        Schema::create('shoprequests', function (Blueprint $table) {
+            $table->bigIncrements('shoprequest_id');
+            $table->date('shop_requested_at');
+            $table->enum('shop_allocated',['pending','accepted','rejected']);
             $table->unsignedBigInteger('shop_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('owner_id');
@@ -34,6 +34,6 @@ class CreateShoprentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shoprents');
+        Schema::dropIfExists('shoprequests');
     }
 }

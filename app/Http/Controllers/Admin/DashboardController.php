@@ -19,19 +19,22 @@ class DashboardController extends Controller
     public function index(Request $request,$id)
     {
         $owner_id=$id;
-        $userDetail = User::latest()->limit(8)->get();
-        $userCount = User::count();
-        $shopCount = Shop::count();
-        $shopAllocated = Shop::where('shop_allocated', '=', '1')->count();
-        $totalRent = Shop::where('shop_allocated', '=', '1')->sum('shop_rent');
+        $userDetail = Shop::where('owner_id','=',$id);
+        $userCount = Shop::where('owner_id','=',$id)->count();
+        $shopCount = Shop::where('owner_id','=',$id)->count();;
+        $shopAllocated = Shop::where('owner_id','=',$id )->where('shop_allocated', '=', '1')->count();
+        $totalRent = Shop::where('owner_id','=',$id )->where('shop_allocated', '=', '1')->sum('shop_rent');
         $ownerCount = Owner::count();
         $ownerRegisteredToday = Owner::whereDate('created_at', Carbon::today())->count();
         $userRegisteredToday = User::whereDate('created_at', Carbon::today())->count();
         $shopRegisteredToday = Shop::whereDate('created_at', Carbon::today())->count();
 
-        return view('owner.dashboard', compact('userDetail','userCount', 'shopCount', 'shopAllocated', 'totalRent', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
+        return view('owner.dashboard', compact('owner_id','userDetail','userCount', 'shopCount', 'shopAllocated', 'totalRent', 'ownerCount', 'ownerRegisteredToday', 'userRegisteredToday', 'shopRegisteredToday'));
    
     }
+
+
+    
 
     /**
      * Show the form for creating a new resource.

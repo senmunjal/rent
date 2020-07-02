@@ -9,6 +9,7 @@ $factory->define(Shoprent::class, function (Faker $faker) {
     return [
         'shop_rented_at'=>now(),
         'user_id'=>factory(\App\User::class),
-        'shop_id'=>factory(\App\Shop::class)
+        'shop_id'=>factory(\App\Shop::class),
+        'owner_id'=>factory(\App\Owner::class)
     ];
 });
