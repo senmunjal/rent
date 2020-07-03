@@ -21,7 +21,10 @@ Route::get('/users','SuperAdmin\DashboardController@viewUsers');
 Route::get('/owners','SuperAdmin\DashboardController@viewOwners');
 
 
+
 Route::get('/admin/{id}','Admin\DashboardController@index');
+Route::get('/admin/{id}/request','Admin\DashboardController@rentrequest');
+
 
 Route::get('/test', function () {
     return view('layout');

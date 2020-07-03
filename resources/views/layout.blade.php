@@ -193,16 +193,18 @@
                             </ul>
                         </li>
 
-
+                    @if($owner_id ?? '')
                         <li class="nav-item">
-                            <a href="{{asset('pages/widgets.html')}}" class="nav-link">
+                            <a href='/admin/{{$owner_id}}/request' class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Wi
+                                    Request
                                     <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
                         </li>
+                        @else
+                    @endif
                         <li class="nav-item has-treeview">
                             <a href="{{asset('#')}}" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>

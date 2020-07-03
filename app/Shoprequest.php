@@ -6,17 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shoprequest extends Model
 {
-    public function owner()
-    {
-        return $this->hasOne(Owner::class);
-    }
+    
+    protected  $primaryKey = 'shoprequest_id';
 
     public function shop()
     {
-        return $this->hasOne(Shop::class);
-    }
-    public function user()
-    {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(Shop::class,'shop_id');
     }
 }

@@ -25,7 +25,7 @@ $factory->define(User::class, function (Faker $faker) {
         'user_password' => bcrypt('test'), // password
         'remember_token' => Str::random(10),
         'user_location'=>'Haldwani',
-        'user_status'=>'1',
+        'user_status'=>'0',
         'user_phone_no'=>$faker->phoneNumber,
         'user_rented_shop'=>$faker->randomDigitNotNull,
         'user_profile_pic'=>$faker->imageUrl($width = 200, $height = 200),
