@@ -6,7 +6,7 @@
         <section class="col-lg-12 ">
             <div class="card col-l-12">
                 <div class="card-header border-transparent ui-sortable-handle" style="cursor: move;">
-                    <h3 class="card-title">Property Detail</h3>
+                    <h3 class="card-title">Property Rent Request</h3>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -25,16 +25,16 @@
 
                                 @foreach($user_detail as $user_details)
                                 <tr>
-                                    <td><a href=""></a>{{$user_details->shop_id}}</td>
-                                    <td>{{$user_details->shop_id->shop_location}}</td>
-                                    <td></td>
-                                    <td><span class="badge badge-warning"></span></td>
-                                    <td>
-                                        <div class="sparkbar" data-color="#f39c12" data-height="20"></div>
-                                    </td>
-                                    <td>
-                                        <div class="sparkbar" data-color="#f39c12" data-height="20"></div>
-                                    </td>
+                                    <td><a href="/admin/{{$owner_id}}/{{$user_details->shop->shop_id}}">{{$user_details->shop_id}}</a></td>
+                                    <td>{{$user_details->shop->shop_location}}</td>
+                                    <td><a href="/admin/{{$owner_id}}/{{$user_details->user->user_id}}">{{$user_details->user->user_name}}</a></td>
+                                    <td>{{$user_details->user->user_email}}</td>
+                                    <td>{{$user_details->user->user_phone_no}}</td>
+                                    <td><div class="row"><div class="col-lg-6">
+                                        <button class="btn btn-success">Accept</button>
+                                    </div><div class="col-lg-6">
+                                        <button class="btn btn-danger">Reject</button>
+                                    </div></div></td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -46,9 +46,6 @@ class DashboardController extends Controller
 
         $owner_id=$id;
         $user_detail=Shoprequest::where('owner_id','=',$id)->where('shop_allocated','=','pending')->get();
-        foreach ($user_detail as $user_details) {
-            echo $user_details->shop->shop_rent;
-        }
         return view('owner.rentrequest',compact('user_detail','owner_id'));
     }
 

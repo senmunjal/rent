@@ -13,4 +13,8 @@ class Shoprequest extends Model
     {
         return $this->belongsTo(Shop::class,'shop_id');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

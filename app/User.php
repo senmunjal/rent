@@ -8,5 +8,10 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected  $primaryKey = 'user_id';
     
+    public function shop()
+    {
+        return $this->hasMany(Shop::class,'shop_id');
+    }
 }
