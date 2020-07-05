@@ -14,11 +14,19 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
-            $table->string('admin_email');
-            $table->string('admin_password');
-            $table->string('admin_phone');
-            $table->date('admin_dob');
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->date('email_verified_at')->nullable();
+            $table->date('phone_verified_at')->nullable();
+            $table->string('phoneno')->unique()->nullable();
+            $table->string('aadhaar_no')->unique()->nullable();
+            $table->string('permanent_address')->nullable();
+            $table->string('current_address')->nullable();
+            $table->enum('status',['0','1']);
+            $table->string('shop_count')->nullable();
+            $table->string('profile_pic')->nullable();
             $table->timestamps();
         });
     }

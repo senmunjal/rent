@@ -18,7 +18,7 @@ Route::get('/', 'SuperAdmin\DashboardController@index');
 
 Route::get('/users','SuperAdmin\DashboardController@viewUsers');
 
-Route::get('/owners','SuperAdmin\DashboardController@viewOwners');
+Route::get('/admins','SuperAdmin\DashboardController@viewOwners');
 
 
 
