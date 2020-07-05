@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OwnerDashboard;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,3 +71,7 @@ Route::prefix('admin')->group(function(){
 // Route::get('/test2', function () {
 //     return view('contact');
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
