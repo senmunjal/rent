@@ -7,17 +7,17 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 $factory->define(Owner::class, function (Faker $faker) {
     return [
-        'owner_name' => $faker->name,
-        'owner_email' => $faker->unique()->safeEmail,
-        'owner_email_verified_at' => now(),
-        'owner_password' => bcrypt('test'), // password
-        'owner_permanent_address'=>'Haldwani',
-        'owner_current_address'=>$faker->address,
-        'owner_status'=>'0',
-        'owner_phoneno'=>$faker->phoneNumber,
-        'owner_shop_count'=>$faker->randomDigitNotNull,
-        'owner_profile_pic'=>$faker->imageUrl($width = 200, $height = 200),
-        'owner_phone_verified_at'=>now(),
-        'owner_aadhaar_no'=>$faker->numerify($string='############')
+        'name' => $faker->name,
+        'email' => $faker->unique()->safeEmail,
+        'email_verified_at' => now(),
+        'password' => bcrypt('test'), // password
+        'permanent_address'=>'Haldwani',
+        'current_address'=>$faker->address,
+        'status'=>'0',
+        'phoneno'=>$faker->phoneNumber,
+        'shop_count'=>$faker->randomDigitNotNull,
+        'profile_pic'=>$faker->imageUrl($width = 200, $height = 200),
+        'phone_verified_at'=>now(),
+        'aadhaar_no'=>$faker->numerify($string='############')
     ];
 });

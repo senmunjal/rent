@@ -20,9 +20,9 @@ class CreateShoprequestsTable extends Migration
             $table->unsignedBigInteger('shop_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('owner_id');
-            $table->foreign('shop_id')->references('shop_id')->on('shops');
-            $table->foreign('user_id')->references('user_id')->on('users');
-            $table->foreign('owner_id')->references('owner_id')->on('owners');
+            $table->foreign('shop_id')->references('id')->on('shops');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('owner_id')->references('id')->on('owners');
             $table->timestamps();
         });
     }

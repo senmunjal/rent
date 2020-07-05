@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\OwnerDashboard;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +14,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('owner')->group(function(){
+
+    Route::get('/','Admin\DashboardController@index')->name('owner.dashboard');
+
+
+    //login
+
+    Route::get('/login','Auth\OwnerLoginController@showLoginForm')->name('owner.login');
+    Route::post('/login','Auth\OwnerLoginController@login')->name('owner.login.submit');
+    
+    //logout
+
+    Route::post('/logout','Auth\OwnerLoginController@logout')->name('owner.logout');
+
+    //register
+
+    Route::get('/register','Auth\OwnerRegisterController@showRegistrationForm')->name('owner.register');
+    Route::post('/register','Auth\OwnerRegisterController@register')->name('owner.register.submit');
+
+});
+
+
 Route::get('/', 'SuperAdmin\DashboardController@index');
 
 Route::get('/users','SuperAdmin\DashboardController@viewUsers');
 
-Route::get('/owners','SuperAdmin\DashboardController@viewOwners');
+//Route::get('/owners','SuperAdmin\DashboardController@viewOwners');
 
+//Route::get('/admin/{id}','Admin\DashboardController@index');
 
-
-Route::get('/admin/{id}','Admin\DashboardController@index');
-Route::get('/admin/{id}/request','Admin\DashboardController@rentrequest');
+//Route::get('/admin/{id}/request','Admin\DashboardController@rentrequest');
 
 
 Route::get('/test', function () {
@@ -49,3 +75,7 @@ Route::get('/test5', function () {
 Route::get('/test2', function () {
     return view('contact');
 });
+
+
+
+

@@ -13,15 +13,11 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request,$id)
+    
+    public function index2(Request $request,$id)
     {
         $owner_id=$id;
-        $owner_detail=Owner::where('owner_id','=',$id)->get();
+        $owner_detail=Owner::where('id','=',$id)->get();
         if($owner_detail->isEmpty()){
             print_r('Invalid Credintial');
        }
@@ -33,7 +29,7 @@ class DashboardController extends Controller
             $total_rent=Shop::where('owner_id','=',$id)->where('shop_allocated','=','1')->sum('shop_rent');
             $property_request=Shoprequest::where('owner_id','=',$id)->where('shop_allocated','=','pending')->get();
 
-            $user_detail=Shoprent::where('owner_id','=',$id)->get();
+            $user_detail=Shoprent::where('id','=',$id)->get();
             
             return view('owner.dashboard', compact('user_detail','property_request','total_rent','toatl_property_notallocated','toatl_property_allocated','owner_id','owner_detail','toatl_property_registered'));
             
@@ -53,68 +49,22 @@ class DashboardController extends Controller
     
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function create()
+    public function __construct()
     {
-        //
+        $this->middleware('auth:owner');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show the application dashboard.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function store(Request $request)
+    public function index()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('home');
     }
 }

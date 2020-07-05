@@ -14,19 +14,19 @@ class CreateOwnersTable extends Migration
     public function up()
     {
         Schema::create('owners', function (Blueprint $table) {
-            $table->bigIncrements('owner_id');
-            $table->string('owner_name');
-            $table->string('owner_email')->unique();
-            $table->string('owner_password');
-            $table->date('owner_email_verified_at')->nullable();
-            $table->date('owner_phone_verified_at')->nullable();
-            $table->string('owner_phoneno')->unique();
-            $table->string('owner_aadhaar_no')->unique();
-            $table->string('owner_permanent_address');
-            $table->string('owner_current_address');
-            $table->enum('owner_status',['0','1']);
-            $table->string('owner_shop_count')->nullable();
-            $table->string('owner_profile_pic')->nullable();
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->date('email_verified_at')->nullable();
+            $table->date('phone_verified_at')->nullable();
+            $table->string('phoneno')->unique();
+            $table->string('aadhaar_no')->unique();
+            $table->string('permanent_address');
+            $table->string('current_address');
+            $table->enum('status',['0','1']);
+            $table->string('shop_count')->nullable();
+            $table->string('profile_pic')->nullable();
             $table->timestamps();
         });
     }

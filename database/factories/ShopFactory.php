@@ -9,7 +9,7 @@ $factory->define(Shop::class, function (Faker $faker) {
     return [
         
         'shop_location'=>'Haldwani',
-        'owner_id'=>'5',
+        'owner_id'=>'3',
         'shop_allocated'=>'0',
         'shop_rent'=>$faker->numerify($string= "####"),
         'shop_security'=>$faker->numerify($string= "####")

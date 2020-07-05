@@ -14,9 +14,9 @@ class CreateShopsTable extends Migration
     public function up()
     {
         Schema::create('shops', function (Blueprint $table) {
-            $table->bigIncrements('shop_id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('owner_id');
-            $table->foreign('owner_id')->references('owner_id')->on('owners');
+            $table->foreign('owner_id')->references('id')->on('owners');
             $table->enum('shop_allocated',[0,1]);
             $table->string('shop_documents')->nullable();
             $table->string('shop_dimension')->nullable();

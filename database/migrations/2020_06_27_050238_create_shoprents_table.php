@@ -14,15 +14,15 @@ class CreateShoprentsTable extends Migration
     public function up()
     {
         Schema::create('shoprents', function (Blueprint $table) {
-            $table->bigIncrements('shoprent_id');
+            $table->bigIncrements('id');
             $table->date('shop_rented_at');
             $table->date('shop_rented_till')->nullable();
             $table->unsignedBigInteger('shop_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('owner_id');
-            $table->foreign('shop_id')->references('shop_id')->on('shops');
-            $table->foreign('user_id')->references('user_id')->on('users');
-            $table->foreign('owner_id')->references('owner_id')->on('owners');
+            $table->foreign('shop_id')->references('id')->on('shops');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('owner_id')->references('id')->on('owners');
             $table->timestamps();
         });
     }
