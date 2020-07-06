@@ -9,8 +9,8 @@ $factory->define(Shoprequest::class, function (Faker $faker) {
     return [
         'shop_requested_at'=>now(),
         'user_id'=>$faker->numerify($string= "#"),
-        'shop_id'=>'1',
-        'owner_id'=>'1',
+        'shop_id'=>'4',
+        'owner_id'=>'44',
         'shop_allocated'=>'pending'
     ];
 });
