@@ -169,10 +169,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{asset('dist/img/user2-160x160.jpeg')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{Auth::user()->profile_pic}}" height="120" width="120" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/test1" class="d-block">User</a>
+                        <a href="{{route('owner.dashboard')}}" class="d-block">{{Auth::user()->name}}</a>
                     </div>
                 </div>
 
@@ -185,17 +185,17 @@
 
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{asset('./index.html')}}" class="nav-link active">
+                                    <a href="{{asset('/admin')}}" class="nav-link active">
                                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                                        <p>Da</p>
+                                        <p>Dashboard</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
-                    @if($owner_id ?? '')
+                    
                         <li class="nav-item">
-                            <a href='/admin/{{$owner_id}}/request' class="nav-link">
+                            <a href="{{route('owner.request')}}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Request
@@ -203,57 +203,18 @@
                                 </p>
                             </a>
                         </li>
-                        @else
-                    @endif
-                        <li class="nav-item has-treeview">
-                            <a href="{{asset('#')}}" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>
-                                    Layout Options
-                                    <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
-                                </p>
-                            </a>
-
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{asset('pages/layout/top-nav.html')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{asset('pages/layout/top-nav-sidebar.html')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Top Navigation + Sidebar</p>
-                                    </a>
-                                </li>
-
-                            </ul>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <!-- <i class="nav-icon fas fa-copy"></i> -->
                                 <p>
-                                    view
+                                    View
                                     <i class="fas fa-angle-left right"></i>
                                     <!-- <span class="badge badge-info right"></span> -->
                                 </p>
                             </a>
 
                             <ul class="nav nav-treeview">
-                            @if($owner_id ?? '')
-
-                            
-                            @else
-                                <li class="nav-item">
-                                    <a href="" class="nav-link">
-                                        <!-- <i class="far fa-circle nav-icon"></i> -->
-                                        <p>Owner</p>
-                                        <a href="/viewowner" class=""> </a> 
-                                        
-                                </li>
-                            
-                            @endif
+                           
                                 
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
@@ -264,7 +225,7 @@
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
                                         <!-- <i class="far fa-circle nav-icon"></i> -->
-                                        <p>Shop</p>
+                                        <p>Property</p>
                                     </a>
                                 </li>
 

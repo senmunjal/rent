@@ -10,7 +10,7 @@ $factory->define(Owner::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => bcrypt('test'), // password
+        'password' => bcrypt('test@123'), // password
         'permanent_address'=>'Haldwani',
         'current_address'=>$faker->address,
         'status'=>'0',

@@ -14,7 +14,7 @@ class CreateShoprequestsTable extends Migration
     public function up()
     {
         Schema::create('shoprequests', function (Blueprint $table) {
-            $table->bigIncrements('shoprequest_id');
+            $table->bigIncrements('id');
             $table->date('shop_requested_at');
             $table->enum('shop_allocated',['pending','accepted','rejected']);
             $table->unsignedBigInteger('shop_id');

@@ -17,39 +17,37 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('owner')->group(function(){
+Route::prefix('admin')->group(function(){
 
     Route::get('/','Admin\DashboardController@index')->name('owner.dashboard');
 
-
     //login
-
     Route::get('/login','Auth\OwnerLoginController@showLoginForm')->name('owner.login');
     Route::post('/login','Auth\OwnerLoginController@login')->name('owner.login.submit');
     
     //logout
-
     Route::post('/logout','Auth\OwnerLoginController@logout')->name('owner.logout');
 
     //register
-
     Route::get('/register','Auth\OwnerRegisterController@showRegistrationForm')->name('owner.register');
     Route::post('/register','Auth\OwnerRegisterController@register')->name('owner.register.submit');
 
+    //request
+    Route::get('/request','Admin\DashboardController@rentrequest')->name('owner.request');
+    
+    //user
+    Route::get('/user','Admin\DashboardController@owneruser')->name('owner.user');
+
+    //shop
+    Route::get('/property','Admin\DashboardController@ownerproperty')->name('owner.property');
 });
 
 
-Route::get('/', 'SuperAdmin\DashboardController@index');
 
-Route::get('/users','SuperAdmin\DashboardController@viewUsers');
 
-//Route::get('/owners','SuperAdmin\DashboardController@viewOwners');
-
-//Route::get('/admin/{id}','Admin\DashboardController@index');
-
-//Route::get('/admin/{id}/request','Admin\DashboardController@rentrequest');
+//Route::get('/users','SuperAdmin\DashboardController@viewUsers');
 
 
 Route::get('/test', function () {

@@ -32,6 +32,6 @@ class User extends Authenticatable
 
     public function shop()
     {
-        return $this->hasMany(Shop::class, 'id');
+        return $this->hasMany(Shop::class,'id');
     }
 }

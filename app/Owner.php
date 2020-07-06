@@ -2,12 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Owner extends Model
+class Owner extends Authenticatable
 {
+    
     use Notifiable;
+    protected  $primaryKey = 'id';
 
     protected $guard='owner';
 
@@ -32,4 +35,9 @@ class Owner extends Model
         'email_verified_at' => 'datetime',
         'phone_verified_at' => 'datetime'
     ];
+
+    public function shop()
+    {
+        return $this->hasMany(Shop::class,'id');
+    }
 }

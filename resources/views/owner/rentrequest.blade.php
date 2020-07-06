@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('owner.layout')
 
 @section('content')
 <div class="content-wrapper" style="min-height: 521px;">
@@ -23,13 +23,13 @@
                             </thead>
                             <tbody>
 
-                                @foreach($user_detail as $user_details)
+                                @foreach($shop_request as $user_details)
                                 <tr>
-                                    <td><a href="/admin/{{$owner_id}}/{{$user_details->shop->shop_id}}">{{$user_details->shop_id}}</a></td>
+                                    <td><a href="/admin/{{$user_details->shop->id}}">{{$user_details->id}}</a></td>
                                     <td>{{$user_details->shop->shop_location}}</td>
-                                    <td><a href="/admin/{{$owner_id}}/{{$user_details->user->user_id}}">{{$user_details->user->user_name}}</a></td>
-                                    <td>{{$user_details->user->user_email}}</td>
-                                    <td>{{$user_details->user->user_phone_no}}</td>
+                                    <td><a href="/admin/{{$user_details->user->user_id}}">{{$user_details->user->name}}</a></td>
+                                    <td>{{$user_details->user->email}}</td>
+                                    <td>{{$user_details->user->phoneno}}</td>
                                     <td><div class="row"><div class="col-lg-6">
                                         <button class="btn btn-success">Accept</button>
                                     </div><div class="col-lg-6">

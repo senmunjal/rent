@@ -10,13 +10,17 @@ use App\Http\Controllers\Controller;
 use App\Shoprent;
 use App\Shoprequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     
-    public function index2(Request $request,$id)
-    {
-        $owner_id=$id;
+    
+    public function index(Request $request)
+    {   
+        $owner_id=Auth::user()->id;
+        
+        $id=$owner_id;
         $owner_detail=Owner::where('id','=',$id)->get();
         if($owner_detail->isEmpty()){
             print_r('Invalid Credintial');
@@ -28,9 +32,7 @@ class DashboardController extends Controller
             $toatl_property_notallocated=Shop::where('owner_id','=',$id)->where('shop_allocated','=','0')->get();
             $total_rent=Shop::where('owner_id','=',$id)->where('shop_allocated','=','1')->sum('shop_rent');
             $property_request=Shoprequest::where('owner_id','=',$id)->where('shop_allocated','=','pending')->get();
-
             $user_detail=Shoprent::where('id','=',$id)->get();
-            
             return view('owner.dashboard', compact('user_detail','property_request','total_rent','toatl_property_notallocated','toatl_property_allocated','owner_id','owner_detail','toatl_property_registered'));
             
         }
@@ -38,11 +40,12 @@ class DashboardController extends Controller
    
     }
 
-    public function rentrequest($id){
-
-        $owner_id=$id;
-        $user_detail=Shoprequest::where('owner_id','=',$id)->where('shop_allocated','=','pending')->get();
-        return view('owner.rentrequest',compact('user_detail','owner_id'));
+    public function rentrequest(){
+        
+        $owner_id=Auth::user()->id;
+        $shop_request=Shoprequest::where('owner_id','=',$owner_id)->where('shop_allocated','=','pending')->get();
+        
+        return view('owner.rentrequest',compact('shop_request','owner_id'));
     }
 
 
@@ -58,13 +61,4 @@ class DashboardController extends Controller
         $this->middleware('auth:owner');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
-    }
 }

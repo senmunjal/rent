@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('owner.layout')
 
 @section('content')
 <div class="content-wrapper" style="min-height: 521px;">
@@ -9,11 +9,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
+                    <h1 class="m-0 text-dark">{{Auth::user()->name}}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a>{{$owner_detail[0]->owner_name}}</a></li>
+                        <li ><form class="breadcrumb-item active" method="POST" action="{{ route('owner.logout') }}" >
+                            @csrf
+                            <button class="btn" type="submit">Logout</button>
+                        </form></li>
                         <!-- <li class="breadcrumb-item active">User Detail</li> -->
                     </ol>
                 </div><!-- /.col -->
@@ -258,7 +261,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone Number</th>
-                                            <th>Shop Rent</th>
+                                            <th>Property Rent</th>
                                         </tr>
                                     </thead>
                                     <tbody>

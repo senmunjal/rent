@@ -27,6 +27,7 @@ class CreateOwnersTable extends Migration
             $table->enum('status',['0','1']);
             $table->string('shop_count')->nullable();
             $table->string('profile_pic')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
