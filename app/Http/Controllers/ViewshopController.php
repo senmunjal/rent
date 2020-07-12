@@ -15,7 +15,8 @@ class ViewshopController extends Controller
     public function index()
     {
         $shop = Shop::limit(115)->get();
-        return view('viewshop', compact('shop'));
+        $returnHTML = view('viewshop')->with('shop', $shop)->render();
+        return response()->json(array('success' => true, 'html' => $returnHTML));
     }
 
 

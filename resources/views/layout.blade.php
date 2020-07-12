@@ -30,7 +30,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
+    <div class="wrapper " id="user_jobs">
 
 
         <!-- Navbar -->
@@ -172,7 +172,7 @@
                             <img src="dist/img/user2-160x160.jpeg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="/test1" class="d-block">User</a>
+                            <a href="/test1" class="d-block">Bharat Sen</a>
                         </div>
                     </div>
 
@@ -187,7 +187,7 @@
                                     <li class="nav-item">
                                         <a href="./index.html" class="nav-link active">
                                             <i class="nav-icon fas fa-tachometer-alt"></i>
-                                            <p>Da</p>
+                                            <p>da</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -240,21 +240,18 @@
 
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="/viewowner" class="nav-link">
-
-                                            <p>Owners</p>
+                                        <a class="nav-link">
+                                            <button class="btn" id="read-owner">Owners</button>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/viewuser" class="nav-link">
-
-                                            <p>Users</p>
+                                        <a class="nav-link">
+                                            <button class="btn" id="read-user">User</button>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/viewshop" class="nav-link">
-
-                                            <p>Shops</p>
+                                        <a class="nav-link">
+                                            <button class="btn" id="read-shop">Shop</button>
                                         </a>
                                     </li>
 
@@ -351,6 +348,24 @@
                 "responsive": true,
             });
         });
+
+        $('#read-owner').on('click', function() {
+            $.get("{{URL::to('/viewowner')}}", function(data) {
+                console.log(data);
+                $('#user_jobs').html(data.html);
+                console.log(data.html);
+            })
+        })
+        $('#read-user').on('click', function() {
+            $.get("{{URL::to('/viewuser')}}", function(data) {
+                $('#user_jobs').html(data.html);
+            })
+        })
+        $('#read-shop').on('click', function() {
+            $.get("{{URL::to('/viewshop')}}", function(data) {
+                $('#user_jobs').html(data.html);
+            })
+        })
     </script>
 </body>
 

@@ -15,8 +15,8 @@ class ViewownerController extends Controller
     public function index()
     {
         $owner = Owner::limit(100)->get();
-        return view('viewowner', compact('owner'));
-        //
+        $returnHTML = view('viewowner')->with('owner', $owner)->render();
+        return response()->json(array('success' => true, 'html' => $returnHTML));
     }
 
     /**

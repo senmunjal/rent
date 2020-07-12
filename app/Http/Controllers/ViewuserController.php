@@ -15,7 +15,8 @@ class ViewuserController extends Controller
     public function index()
     {
         $user = User::limit(100)->get();
-        return view('viewuser', compact('user'));
+        $returnHTML = view('viewuser')->with('user', $user)->render();
+        return response()->json(array('success' => true, 'html' => $returnHTML));
     }
 
     /**

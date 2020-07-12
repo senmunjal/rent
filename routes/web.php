@@ -46,3 +46,31 @@ Route::get('/test5', function () {
 Route::get('/test1', function () {
     return view('welcome');
 });
+Route::get('/rent', function () {
+    return view('pages.rent');
+});
+Route::get('/adminowner', function () {
+    return view('pages.adminowner');
+});
+Route::get('/electricity', function () {
+    return view('pages.electricity');
+});
+Route::get('/location', function () {
+    return view('pages.location');
+});
+Route::get('/pendingrequest', function () {
+    return view('pages.pendingrequest');
+});
+Route::get('/restuser', function () {
+    return view('pages.restuser');
+});
+
+Route::get('/shop', function () {
+    return view('pages.shop');
+});
+Route::get('/user', function () {
+    return view('pages.user');
+});
+Route::get('/useralot', function () {
+    return view('pages.useralot');
+});
